@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brian Kirop | Geologist</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================
+       General Body Styling
+    ========================== */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    /* ==========================
+       Header
+    ========================== */
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* ==========================
+       Navigation
+    ========================== */
+    nav {
+      text-align: center;
+      background-color: #34495e;
+      position: sticky;
+      top: 80px;
+      z-index: 999;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      padding: 10px 5px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      color: #f39c12;
+      text-decoration: underline;
+    }
+
+    /* ==========================
+       Sections
+    ========================== */
+    section {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    section:hover {
+      transform: translateY(-3px);
+    }
+
+    h1, h2, h3 {
+      color: #2c3e50;
+      text-align: center;
+      margin-top: 0;
+    }
+
+    p {
+      text-align: justify;
+      margin-bottom: 15px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    /* ==========================
+       Images
+    ========================== */
+    img {
+      display: block;
+      margin: 10px auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ==========================
+       Buttons
+    ========================== */
+    input[type="submit"] {
+      background-color: #b92989;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #52f312;
+      transform: scale(1.05);
+    }
+
+    /* ==========================
+       Footer
+    ========================== */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #2c3e50;
+      color: white;
+      margin-top: 30px;
+    }
+
+    /* ==========================
+       Responsive Design
+    ========================== */
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 5px 0;
+      }
+
+      section {
+        padding: 15px;
+        margin: 10px;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+      }
+    }
+  </style>
+
+  <script>
+    // Welcome alert when page loads
+    window.onload = function() {
+      alert("Welcome to Brian Kirop's website!");
+    };
+
+    // Highlight active section in nav on scroll
+    window.addEventListener('scroll', function() {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('nav a');
+
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+<header>
+  <h1>Brian Kirop</h1>
+  <h2>Professional Geologist</h2>
+</header>
+
+<nav>
+  <a href="#home" class="active">Home</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- ========================== Home Section ========================== -->
+<section id="home">
+  <img src="PYTHON/KIROP.jpg" alt="KIROP">
+  <h3>Welcome!</h3>
+  <p>
+    Brian Kirop is a dedicated geologist with extensive experience in geological mapping,
+    mineral exploration, and environmental studies. Explore this site to learn more about his work and expertise.
+  </p>
+</section>
+
+<!-- ========================== About Section ========================== -->
+<section id="about">
+  <h3>About Me</h3>
+  <p>
+    Brian Kirop specializes in geological mapping, mineral exploration, and environmental assessment.
+    His work focuses on sustainable resource development and conservation.
+  </p>
+
+  <h3>Areas of Expertise</h3>
+  <ul>
+    <li>Geological Mapping</li>
+    <li>Mineral Exploration</li>
+    <li>Environmental Impact Assessment</li>
+    <li>Geotechnical Investigations</li>
+    <li>Remote sensing and GIS</li>
+  </ul>
+
+  <h3>Education</h3>
+  <ul>
+    <li>Bachelor of Science in Geology</li>
+    <li>Field Mapping Training</li>
+    <li>Professional Geological Experience</li>
+  </ul>
+</section>
+
+<!-- ========================== Contact Section ========================== -->
+<section id="contact">
+  <h3>Contact Me</h3>
+  <form action="mailto:briankirop@example.com" method="post">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="5" cols="40" required></textarea><br><br>
+
+    <input type="submit" value="Send">
+  </form>
+</section>
+
+<footer>
+  &copy; 2025 Brian Kirop
+</footer>
+
+</body>
+</html>
